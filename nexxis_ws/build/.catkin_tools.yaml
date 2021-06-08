@@ -1,0 +1,6 @@
+devel_space: /home/hjalmar/thesis/nexxis_ws/devel
+install: false
+install_space: /home/hjalmar/thesis/nexxis_ws/install
+profile: default
+source_space: /home/hjalmar/thesis/nexxis_ws/src
+workspace: /home/hjalmar/thesis/nexxis_ws

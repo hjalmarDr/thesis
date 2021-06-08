@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: reachAlpha
+    relative_path: urdf/reachAlpha.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/reachAlpha.srdf
+  CONFIG:
+    author_name: Hjalmar_Dressel
+    author_email: dressel.hjalmar@gmail.com
+    generated_timestamp: 1623162252

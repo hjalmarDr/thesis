@@ -1,0 +1,8 @@
+prefix=/home/hjalmar/thesis/nexxis_ws/devel/.private/reachAlpha
+
+Name: reachAlpha
+Description: Description of reachAlpha
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
