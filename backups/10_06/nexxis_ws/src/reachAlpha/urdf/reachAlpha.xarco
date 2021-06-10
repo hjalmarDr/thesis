@@ -1,0 +1,25 @@
+<?xml version = "1.0" ?>
+
+<robot name = "reach" xmlns:xarco = "http://www.ros.org/wiki/xarco">
+    <link name = "first_link">
+        <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://reachAlpha/meshes/first_link.STL"/>
+        </geometry>
+        
+        <material name="">
+          <color rgba="0.79216 0.81961 0.93333 1" />
+        </material>
+      </visual>
+    </link>
+
+    <link name = "second_link">
+        <visual>
+            <origin rpy = "0 0 0" xyz = "0 0 0" />
+            <geometry>
+                <box size = "1 1 1">
+            </geometry>
+        </visual>
+    </link>
+</robot>  

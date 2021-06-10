@@ -1,0 +1,8 @@
+prefix=/home/hjalmar/nexxis_ws/devel/.private/reachalpha_moveit_config
+
+Name: reachalpha_moveit_config
+Description: Description of reachalpha_moveit_config
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

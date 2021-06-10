@@ -1,0 +1,9 @@
+controller_list:
+  - name: arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+      - first_to_second
+      - second_to_third
+      - third_to_forth
+      - forth_to_fifth

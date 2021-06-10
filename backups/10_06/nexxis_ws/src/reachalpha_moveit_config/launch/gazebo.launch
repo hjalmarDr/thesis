@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+  <dynamics damping="10" friction="0.1"/>
+  <arg name="model" value="$(find reachAlpha)/urdf/reachAlpha.urdf"/>
+  <param name="robot_description" command="cat $(arg model)"/>
+  
+  <include file = "$(find reachAlpha)/launch/reachworld.launch">
+      <arg name="urdf_robot_file" value="$(find reachAlpha)/urdf/reachAlpha.urdf" />
+      <arg name="robot_name" value="reachAlpha" />
+    </include>
+
+  <include file="$(find reachalpha_moveit_config)/launch/ros_controllers.launch"/>
+
+</launch>

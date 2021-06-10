@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/hjalmar/nexxis_ws/build/reachAlpha/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bdeef/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bdeef.dir/build.make CMakeFiles/cmTC_bdeef.dir/build
+make[1]: Entering directory '/home/hjalmar/nexxis_ws/build/reachAlpha/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bdeef.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_bdeef.dir/CheckSymbolExists.c.o   -c /home/hjalmar/nexxis_ws/build/reachAlpha/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_bdeef
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bdeef.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_bdeef.dir/CheckSymbolExists.c.o  -o cmTC_bdeef 
+CMakeFiles/cmTC_bdeef.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_bdeef.dir/build.make:97: recipe for target 'cmTC_bdeef' failed
+make[1]: *** [cmTC_bdeef] Error 1
+make[1]: Leaving directory '/home/hjalmar/nexxis_ws/build/reachAlpha/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_bdeef/fast' failed
+make: *** [cmTC_bdeef/fast] Error 2
+
+File /home/hjalmar/nexxis_ws/build/reachAlpha/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/hjalmar/nexxis_ws/build/reachAlpha/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0f810/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0f810.dir/build.make CMakeFiles/cmTC_0f810.dir/build
+make[1]: Entering directory '/home/hjalmar/nexxis_ws/build/reachAlpha/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f810.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0f810.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0f810
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f810.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_0f810.dir/CheckFunctionExists.c.o  -o cmTC_0f810 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_0f810.dir/build.make:97: recipe for target 'cmTC_0f810' failed
+make[1]: *** [cmTC_0f810] Error 1
+make[1]: Leaving directory '/home/hjalmar/nexxis_ws/build/reachAlpha/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0f810/fast' failed
+make: *** [cmTC_0f810/fast] Error 2
+
+

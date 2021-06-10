@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <include file="$(find reachalpha_moveit_config)/launch/gazebo_reach.launch"/>
+    <include file="$(find reachalpha_moveit_config)/launch/joint_control.launch"/>
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/hjalmar/nexxis_ws/devel/.private/reachmoveit
+
+Name: reachmoveit
+Description: Description of reachmoveit
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="reachAlpha">
+
+    <link name="world"/>
+    <joint name="fixed" type="fixed">
+      <parent link="world" />
+      <child link="first_link" />
+      <origin xyz="0.0 0.0 0.0" rpy="0 -1.57 0" />
+    </joint>
+
+    <!--___________________________________________________________________________________________________________________-->
+    <!-- LINK: FIRST LINK-->
+    <link name="first_link">
+      <inertial>
+        <origin xyz="0.16236 0.16631 -0.070717" rpy="0 0 0"/>
+        <mass value="0.59681" />
+        <inertia ixx="0.0016912" ixy="0.0" ixz="0.00039211" iyy="0.0034071" iyz="0.0" izz="0.0018492" />
+      </inertial>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://reachAlpha/meshes/first_link.STL"/>
+        </geometry>
+        <material name="">
+          <color rgba="0.79216 0.81961 0.93333 1" />
+        </material>
+      </visual>
+      
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://reachAlpha/meshes/first_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+
+
+    <!--___________________________________________________________________________________________________________________-->
+    <!-- LINK: SECOND LINK-->
+    <link name="second_link">
+      <inertial>
+        <origin xyz="0.033 -0.013895 -0.02" rpy="0 0 0" />
+        <mass value="0.15" />
+        <inertia ixx="0.0008" ixy="0.0" ixz="0.00019" iyy="0.00019" iyz="0.0" izz="0.0009"/>
+      </inertial>
+      
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://reachAlpha/meshes/second_link.STL" />
+        </geometry>
+        <material name="">
+          <color rgba="0.79216 0.81961 0.93333 1" />
+        </material>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://reachAlpha/meshes/second_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- JOINT: FIRST TO SECOND-->
+    <joint name="first_to_second" type="revolute">
+      <origin xyz="0.11187 -0.0032667 0.16685" rpy="1.5412 0 0"/>
+      <parent link="first_link"/>
+      <child link="second_link"/>
+      <axis xyz="1 0 0" />
+      <limit lower="-3.14159265" upper="3.14159265" effort="150.0" velocity="3.5" />
+    </joint>
+
+    <!--___________________________________________________________________________________________________________________-->
+    <!-- LINK: THIRD LINK-->
+    <link name="third_link">
+      <inertial>
+        <origin xyz="0.020201 -0.013885 -0.07338" rpy="0 0 0" />
+        <mass value="0.59681" />
+        <inertia ixx="0.0016912" ixy="0.0" ixz="0.00039211" iyy="0.0034071" iyz="0.0" izz="0.0018492" />
+      </inertial>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://reachAlpha/meshes/third_link.STL" />
+        </geometry>
+        <material name="">
+          <color rgba="0.79216 0.81961 0.93333 1" />
+        </material>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://reachAlpha/meshes/third_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- JOINT: SECOND TO THIRD-->
+    <joint name="second_to_third" type="revolute">
+      <origin xyz="0.033 0 -0.02" rpy="0 0.23064 0" />
+      <parent link="second_link" />
+      <child link="third_link" />
+      <axis xyz="0 1 0" />
+      <limit lower="-2.1" upper="1.33" effort="150.0" velocity="3.5" />
+    </joint>
+
+    <!--___________________________________________________________________________________________________________________-->
+    <!-- LINK: FORTH LINK-->
+    <link name="forth_link">
+      <inertial>
+        <origin xyz="0 -0.013895 -2.7756E-17" rpy="0 0 0" />
+        <mass value="0.15" />
+        <inertia ixx="0.0008" ixy="0.0" ixz="0.00019" iyy="0.00019" iyz="0.0" izz="0.0009"/>
+      </inertial>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://reachAlpha/meshes/forth_link.STL" />
+        </geometry>
+        <material name="">
+          <color rgba="0.79216 0.81961 0.93333 1" />
+        </material>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://reachAlpha/meshes/forth_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- JOINT: THIRD TO FORTH-->
+    <joint name="third_to_forth" type="revolute">
+      <origin xyz="0.04 0 -0.1453" rpy="0 0 0" />
+      <parent link="third_link" />
+      <child link="forth_link" />
+      <axis xyz="0 1 0" />
+      <limit lower="0" upper="3.48159265" effort="150.0" velocity="3.5" />
+    </joint>
+
+    <!--___________________________________________________________________________________________________________________-->
+    <!-- LINK: FIFTH LINK-->
+    <link name="fifth_link">
+      <inertial>
+        <origin xyz="-0.066779 0.0016758 0.051405" rpy="0 0 0" />
+        <mass value="0.59681" />
+        <inertia ixx="0.0016912" ixy="0.0" ixz="0.00039211" iyy="0.0034071" iyz="0.0" izz="0.0018492" />
+      </inertial>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://reachAlpha/meshes/fifth_link.STL" />
+        </geometry>
+        <material name="">
+          <color rgba="0.79216 0.81961 0.93333 1" />
+        </material>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://reachAlpha/meshes/fifth_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- JOINT: FORTH TO FIFTH-->
+    <joint name="forth_to_fifth" type="revolute">
+      <origin xyz="0.020357 0 0.031107" rpy="0 0 0.00033902" />
+      <parent link="forth_link" />
+      <child link="fifth_link" />
+      <axis xyz="0.011438 0 0.99993" />
+      <limit lower="-3.14159265" upper="3.14159265" effort="150.0" velocity="3.5" />
+    </joint>
+
+    <transmission name="trans_reach_joint_1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="first_to_second">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="reach_joint_1_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_reach_joint_2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="second_to_third">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="reach_joint_2_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+   <transmission name="trans_reach_joint_3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="third_to_forth">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="reach_joint_3_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+   <transmission name="trans_reach_joint_4">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="forth_to_fifth">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="reach_joint_4_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>reachAlpha</robotNamespace>
+        </plugin>
+    </gazebo>
+
+</robot>

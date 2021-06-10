@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+ <arg name="model" value="$(find reachAlpha)/urdf/reachAlpha.urdf"/>
+  <param name="robot_description" command="cat $(arg model)"/>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find reachAlpha)/config/joint_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/reachAlpha" 
+    args="joint_1_controller 
+          joint_2_controller 
+          joint_3_controller 
+          joint_4_controller 
+          joint_state_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/reachAlpha/joint_states" />
+  </node>-->
+
+</launch>

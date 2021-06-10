@@ -1,0 +1,1 @@
+controller_joint_names: ['first_to_second', 'second_to_third', 'third_to_forth', 'forth_to_fifth', ]

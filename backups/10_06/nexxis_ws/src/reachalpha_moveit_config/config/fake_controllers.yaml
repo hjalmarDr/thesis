@@ -1,0 +1,12 @@
+controller_list:
+  - name: fake_manipulator_controller
+    joints:
+      - first_to_second
+      - second_to_third
+      - third_to_forth
+  - name: fake_end_e_controller
+    joints:
+      - forth_to_fifth
+initial:  # Define initial robot poses.
+  - group: manipulator
+    pose: straightUp
